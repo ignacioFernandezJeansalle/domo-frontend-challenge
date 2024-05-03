@@ -1,0 +1,32 @@
+---
+import Container from "../components/Container.astro";
+import CarouselInfinite from "../components/CarouselInfinite.astro";
+---
+
+<section>
+  <Container>
+    <h2 class="fs-6 fw-semibold text-center" style="--bs-heading-color: #7f7f7f;">CLIENT WE WORKED WITH</h2>
+  </Container>
+  <article>
+    <CarouselInfinite
+      images={[
+        { src: "/img/clients/TNW.webp", alt: "Logo TNW" },
+        { src: "/img/clients/Google.webp", alt: "Logo Google" },
+        { src: "/img/clients/Nike.webp", alt: "Logo Nike" },
+        { src: "/img/clients/Airbnb.webp", alt: "Logo Airbnb" },
+        { src: "/img/clients/It-new-africa.webp", alt: "Logo It-new-africa" },
+      ]}
+    />
+  </article>
+</section>
+
+<style>
+  section {
+    padding-top: 160px;
+  }
+
+  article {
+    padding-top: 48px;
+    padding-bottom: 72px;
+  }
+</style>
