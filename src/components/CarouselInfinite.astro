@@ -1,0 +1,74 @@
+---
+interface Props {
+  images: {
+    src: string;
+    alt: string;
+  }[];
+}
+
+const { images } = Astro.props;
+const numberOfImages = images.length;
+---
+
+<div class="slider">
+  <ul>
+    {
+      images.map((image) => (
+        <li>
+          <img class="slide" src={image.src} alt={image.alt} />
+        </li>
+      ))
+    }
+  </ul>
+  <ul aria-hidden="true">
+    {
+      images.map((image) => (
+        <li>
+          <img class="slide" src={image.src} alt={image.alt} />
+        </li>
+      ))
+    }
+  </ul>
+</div>
+
+<style define:vars={{ numberOfImages }}>
+  .slider {
+    display: flex;
+    --gap: 0px;
+    gap: var(--gap);
+    overflow: hidden;
+  }
+
+  .slider ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--gap);
+    padding: 0;
+
+    animation: scroll calc(5s * var(--numberOfImages)) linear infinite;
+  }
+
+  /* .slider:hover ul {
+    animation-play-state: paused;
+  } */
+
+  @keyframes scroll {
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+
+  .slide {
+    width: 380px;
+    aspect-ratio: 480/145;
+    object-fit: cover;
+  }
+
+  @media (width < 768px) {
+    .slide {
+      width: 200px;
+    }
+  }
+</style>
