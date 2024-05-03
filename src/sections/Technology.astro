@@ -1,0 +1,61 @@
+---
+import Container from "../components/Container.astro";
+import IconHTML from "../Icons/IconHTML.astro";
+import IconCSS from "../Icons/IconCSS.astro";
+import IconSASS from "../Icons/IconSASS.astro";
+import IconNODEJS from "../Icons/IconNODEJS.astro";
+import IconANGULAR from "../Icons/IconANGULAR.astro";
+import IconPYTHON from "../Icons/IconPYTHON.astro";
+---
+
+<section class="bg-primary">
+  <Container>
+    <article class="tech d-flex justify-content-center align-items-center">
+      <div class="w-50">
+        <h2 class="text-light mb-4">We use cutting adge technology</h2>
+        <p class="text-light" style="--bs-text-opacity: 0.70;">
+          Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean lacinia bibendum nulla sed consectetur. Cum
+          sociis natoque penatibus et magnis dis parturient montes, nascetur rididulus mus. Nulla vitae elit libero, a
+          pharetra augue. Vestibulum id ligula porta felis euismod semper. Vivamus sagittis lacus vel augue laoreet
+          rutrum faucibus dolor auctor.
+        </p>
+      </div>
+      <div class="container text-light w-50">
+        <div class="row row-cols-2" style="--bs-gutter-x: 48px;">
+          <div class="col py-2 text-end">
+            <IconHTML class="brand-icon" />
+          </div>
+          <div class="col py-2">
+            <IconCSS class="brand-icon" />
+          </div>
+          <div class="col py-2 text-end">
+            <IconSASS class="brand-icon" />
+          </div>
+          <div class="col py-2">
+            <IconNODEJS class="brand-icon" />
+          </div>
+
+          <div class="col py-2 text-end">
+            <IconANGULAR class="brand-icon" />
+          </div>
+          <div class="col py-2">
+            <IconPYTHON class="brand-icon" />
+          </div>
+        </div>
+      </div>
+    </article>
+  </Container>
+
+  <style>
+    .tech {
+      padding-top: 180px;
+      padding-bottom: 140px;
+    }
+
+    .brand-icon {
+      width: 92px;
+      height: auto;
+      stroke-width: 1.5;
+    }
+  </style>
+</section>
