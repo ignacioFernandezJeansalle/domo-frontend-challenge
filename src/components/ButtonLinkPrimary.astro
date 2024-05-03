@@ -1,0 +1,22 @@
+---
+const { href } = Astro.props;
+---
+
+<a href={href} class="btn btn-primary fw-medium d-flex justify-content-center align-items-center">
+  <span class="d-flex align-items-center gap-2">
+    <slot />
+  </span>
+</a>
+
+<style>
+  .btn {
+    --bs-btn-font-size: 12px;
+    --bs-btn-line-height: none;
+    --bs-btn-padding-x: 24px;
+  }
+
+  .btn-primary {
+    --bs-btn-bg: rgb(var(--bs-primary-rgb));
+    --bs-btn-border-color: rgb(var(--bs-primary-rgb));
+  }
+</style>
