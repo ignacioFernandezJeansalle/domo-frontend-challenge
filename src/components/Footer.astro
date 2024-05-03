@@ -1,0 +1,110 @@
+---
+import Container from "../components/Container.astro";
+
+import IconBrandX from "../Icons/IconBrandX.astro";
+import IconBasketball from "../Icons/IconBasketball.astro";
+import IconBrandFacebook from "../Icons/IconBrandFacebook.astro";
+import IconBrandInstagram from "../Icons/IconBrandInstagram.astro";
+import IconGithub from "../Icons/IconGithub.astro";
+import IconLinkedin from "../Icons/IconLinkedin.astro";
+---
+
+<footer class="bg-dark">
+  <Container>
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-12 col-lg-6 mt-5">
+          <h5 class="text-light fw-semibold mb-4">compleet labs</h5>
+          <p class="text-light w-75" style="--bs-text-opacity: 0.7;">
+            Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet
+            risus. Donec ullamcorper nulla.
+          </p>
+          <nav class="d-flex gap-3">
+            <a href="#twitter" class="text-light" style="--bs-text-opacity: 0.7;">
+              <IconBrandX />
+            </a>
+            <a href="#basketball" class="text-light" style="--bs-text-opacity: 0.7;">
+              <IconBasketball />
+            </a>
+            <a href="#facebook" class="text-light" style="--bs-text-opacity: 0.7;">
+              <IconBrandFacebook />
+            </a>
+            <a href="#instagram" class="text-light" style="--bs-text-opacity: 0.7;">
+              <IconBrandInstagram />
+            </a>
+          </nav>
+        </div>
+        <div class="col-12 col-sm-4 col-lg-2 col-md-2 mt-5">
+          <h6 class="text-light fw-semibold mb-4">SITEMAP</h6>
+          <nav class="d-flex flex-column gap-2">
+            <a href="/" class="text-light" style="--bs-text-opacity: 0.7;">Home</a>
+            <a href="#technology" class="text-light" style="--bs-text-opacity: 0.7;">Technology</a>
+            <a href="#services" class="text-light" style="--bs-text-opacity: 0.7;">Services</a>
+            <a href="#about" class="text-light" style="--bs-text-opacity: 0.7;">About</a>
+          </nav>
+        </div>
+        <div class="col-12 col-sm-4 col-lg-2 col-md-2 mt-5">
+          <h6 class="text-light fw-semibold mb-4">CASE STUDIES</h6>
+          <nav class="d-flex flex-column gap-2">
+            <a
+              href="https://www.swiss.com/ar/es/homepage"
+              target="_blank"
+              class="text-light"
+              style="--bs-text-opacity: 0.7;">Swiss Airlines</a
+            >
+            <a href="https://www.google.com" target="_blank" class="text-light" style="--bs-text-opacity: 0.7;"
+              >Google</a
+            >
+            <a href="https://www.apple.com" target="_blank" class="text-light" style="--bs-text-opacity: 0.7;">Apple</a>
+            <a href="https://www.nike.com" target="_blank" class="text-light" style="--bs-text-opacity: 0.7;">Nike</a>
+          </nav>
+        </div>
+        <div class="col-12 col-sm-4 col-lg-2 mt-5">
+          <h6 class="text-light fw-semibold mb-4">CONTACT</h6>
+          <nav class="d-flex flex-column gap-2">
+            <a href="#jobs" class="text-light" style="--bs-text-opacity: 0.7;">Jobs</a>
+            <a href="#hire-us" class="text-light" style="--bs-text-opacity: 0.7;">Hire us</a>
+          </nav>
+        </div>
+      </div>
+      <div class="row border-top pt-5">
+        <div class="col-12 col-sm-6">
+          <p class="text-light fw-semibold mb-2">Ignacio Fernández Jeansalle</p>
+          <p class="text-light mb-0" style="--bs-text-opacity: 0.7;">ignaciofj@gmail.com</p>
+          <p class="text-light mb-2" style="--bs-text-opacity: 0.7;">+54.9.11.6883.7680</p>
+          <div class="d-flex gap-3">
+            <a href="https://github.com/ignacioFernandezJeansalle" target="_blank"
+              ><IconGithub class="text-light" width="24px" height="24px" /></a
+            >
+            <a href="https://www.linkedin.com/in/ignaciofernandezjeansalle/" target="_blank"
+              ><IconLinkedin class="text-light" width="24px" height="24px" /></a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </Container>
+</footer>
+
+<style>
+  footer {
+    padding-top: 128px;
+    padding-bottom: 48px;
+  }
+
+  h5 {
+    font-size: 14px;
+  }
+
+  h6 {
+    font-size: 12px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  a:hover {
+    opacity: 0.6;
+  }
+</style>
