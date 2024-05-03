@@ -23,12 +23,10 @@ const CARDS = [
   <Container class="d-flex flex-column flex-lg-row justify-content-center gap-5">
     {
       CARDS.map((card) => {
-        const styleBg = card.bgImg
-          ? `background-image: url(${card.bgImg}); background-repeat: no-repeat; background-size: contain; background-position: top 1rem right 1.5rem;`
-          : "";
+        const styleBg = card.bgImg ? `background-image: url(${card.bgImg});` : "";
         return (
           <div
-            class="card bg-primary mx-auto"
+            class="card bg-primary mx-auto bg-card-about-img"
             style={`--bs-card-spacer-x: 1.5rem; --bs-card-spacer-y: 2rem; --bs-card-border-width: 0px; max-width: 650px; ${styleBg}`}
           >
             <div class="card-body">
@@ -54,5 +52,29 @@ const CARDS = [
 <style>
   .card-text {
     margin-bottom: 40px;
+  }
+
+  .bg-card-about-img {
+    background-repeat: no-repeat;
+    background-size: auto 90%;
+    background-position: bottom 0 right -140px;
+  }
+
+  @media (width >= 390px) {
+    .bg-card-about-img {
+      background-position: bottom 0 right -100px;
+    }
+  }
+
+  @media (width >= 500px) {
+    .bg-card-about-img {
+      background-position: bottom 0 right -0px;
+    }
+  }
+
+  @media (width >= 600px) {
+    .bg-card-about-img {
+      background-position: bottom 0 right 20px;
+    }
   }
 </style>
