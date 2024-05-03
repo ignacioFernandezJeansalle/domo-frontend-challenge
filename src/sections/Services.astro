@@ -38,10 +38,12 @@ const CARDS = [
     </div>
   </Container>
   <article class="pt-5 bg-dark" style="margin-bottom: -65px;">
-    <Container class="d-flex justify-content-center gap-5">
+    <Container
+      class="d-flex flex-column align-items-center flex-lg-row justify-content-lg-between align-items-lg-stretch gap-5"
+    >
       {
         CARDS.map((card) => (
-          <div class="card text-center mb-3">
+          <div class="card text-center mb-3" style="max-width: 350px;">
             <div class="card-body">
               <card.icon
                 class="bg-primary text-light rounded-circle p-2 mb-3"
@@ -50,7 +52,7 @@ const CARDS = [
               <h3 class="card-title fs-6 fw-semibold mb-3">{card.title}</h3>
               <p class="card-text fw-medium">{card.description}</p>
               <a
-                href="#"
+                href="#learn-more"
                 class="btn btn-secondary fw-medium"
                 style="--bs-btn-font-size: 12px; --bs-btn-line-height: none; --bs-btn-padding-x: 24px;--bs-btn-color: rgba(0, 0, 0, 0.8); --bs-btn-bg: transparent;"
               >
@@ -67,6 +69,18 @@ const CARDS = [
 <style>
   section {
     margin-top: -100px;
+  }
+
+  @media (width < 540px) {
+    section {
+      margin-top: -120px;
+    }
+  }
+
+  @media (width < 400px) {
+    section {
+      margin-top: -160px;
+    }
   }
 
   .services {
