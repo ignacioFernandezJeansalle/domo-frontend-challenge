@@ -1,0 +1,43 @@
+---
+import ButtonLinkPrimary from "../components/ButtonLinkPrimary.astro";
+import ButtonLinkSecondary from "../components/ButtonLinkSecondary.astro";
+import Container from "../components/Container.astro";
+
+import IconArrowRight from "../Icons/IconArrowRight.astro";
+---
+
+<section class="bg-dark bg-hero-img">
+  <Container>
+    <div class="hero">
+      <h1 class="text-light fw-semibold">We build beautiful and reliable web solutions</h1>
+      <p class="text-light" style="--bs-text-opacity: 0.7;">
+        We strongly believe that communication, trust and transparency are the essential elements of successfull
+        business relationship. Ready for the journey?
+      </p>
+      <div class="d-flex gap-3">
+        <ButtonLinkSecondary href="#">Learn more</ButtonLinkSecondary>
+        <ButtonLinkPrimary href="#">Our Projects <IconArrowRight width="20px" /></ButtonLinkPrimary>
+      </div>
+    </div>
+  </Container>
+</section>
+
+<style>
+  .hero {
+    padding-block: 400px;
+    max-width: 520px;
+  }
+
+  @media (width < 768px) {
+    .hero {
+      padding-block: 200px;
+    }
+  }
+
+  .bg-hero-img {
+    background-image: url("/img/asset-background.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: right;
+  }
+</style>
