@@ -1,50 +1,227 @@
 ---
-import Container from "./Container.astro";
+import IconHireUs from "../Icons/IconHireUs.astro";
+import IconOpenMenu from "../Icons/IconOpenMenu.astro";
+import IconCloseMenu from "../Icons/IconCloseMenu.astro";
 ---
 
 <header>
-  <nav class="navbar navbar-dark navbar-expand-md">
-    <Container>
-      <span class="navbar-brand">compleet labs</span>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
+  <nav>
+    <p class="nav-brand">compleet labs</p>
+    <div id="navMenu" class="nav-menu">
+      <ul class="nav-list">
+        <li>
+          <a class="nav-sections active" href="/" aria-label="Home">
+            <span>Home</span>
+          </a>
+        </li>
+        <li>
+          <a class="nav-sections" href="#services" aria-label="Services">
+            <span>Services</span>
+          </a>
+        </li>
+        <li>
+          <a class="nav-sections" href="#technology" aria-label="Technology">
+            <span>Technology</span>
+          </a>
+        </li>
+        <li>
+          <a class="nav-sections" href="#case-studies" aria-label="Case Studies">
+            <span>Case Studies</span>
+          </a>
+        </li>
+        <li>
+          <a class="nav-sections" href="#about" aria-label="About">
+            <span>About</span>
+          </a>
+        </li>
+
+        <li>
+          <a class="nav-sections" href="#hire-us" aria-label="Hire us">
+            <span>
+              <IconHireUs width="16px" height="16px" />
+              Hire us
+            </span>
+          </a>
+        </li>
+      </ul>
+
+      <button id="navBtnClose" class="nav-btn-close">
+        <IconCloseMenu />
       </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-link active" style="" href="#home">Home</a>
-          <a class="nav-link" href="#services">Services</a>
-          <a class="nav-link" href="#technology">Technology</a>
-          <a class="nav-link" href="#case-studies">Case Studies</a>
-          <a class="nav-link" href="#about">About</a>
-          <a class="nav-link" href="#hire-us">Hire us</a>
-        </div>
-      </div>
-    </Container>
+    </div>
+
+    <button id="navBtnOpen" class="nav-btn-open">
+      <IconOpenMenu />
+    </button>
   </nav>
 </header>
 
 <style>
   header {
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 0px;
+    left: 0px;
     width: 100%;
+    z-index: 10;
+    height: 64px;
+    background-color: rgb(var(--bs-dark-rgb));
+
+    animation: nav-shadown 1s linear both;
+    animation-timeline: scroll();
+    animation-range: 0 250px;
   }
 
-  .navbar {
-    --bs-navbar-padding-y: 48px;
-    --bs-navbar-nav-link-padding-x: 20px;
+  @keyframes nav-shadown {
+    to {
+      background-color: rgb(var(--bs-dark-rgb));
+      height: 64px;
+    }
   }
 
-  .navbar-collapse {
-    justify-content: end;
+  nav {
+    max-width: 1200px;
+    padding-inline: 20px;
+    margin-inline: auto;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-brand {
+    font-size: 16px;
+    color: rgb(var(--bs-light-rgb));
+    margin-bottom: 0px;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0px;
+    left: -200%;
+    bottom: 0px;
+    width: 100%;
+    background-color: rgb(var(--bs-dark-rgb));
+    transition: left 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .nav-menu.show {
+    left: 0px;
+  }
+
+  .nav-list {
+    margin-bottom: 0px;
+    list-style: none;
+    padding-block: 96px;
+    padding-inline: 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+  }
+
+  .nav-list li {
+    padding-block: 4px;
+    padding-inline: 32px;
+  }
+
+  .nav-list li:last-child a {
+    opacity: 1;
+  }
+
+  a {
+    text-decoration: none;
+    font-size: 16px;
+    color: rgb(var(--bs-light-rgb));
+    opacity: 0.7;
+    transition: opacity 150ms ease;
+  }
+
+  a:hover {
+    opacity: 1;
+  }
+
+  button {
+    border: none;
+    background: transparent;
+    color: rgb(var(--bs-light-rgb));
+  }
+
+  .nav-btn-close {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+  }
+
+  .nav-btn-close:hover {
+    opacity: 0.7;
+  }
+
+  .nav-sections.active {
+    opacity: 1;
+  }
+
+  .nav-sections span {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+  }
+
+  @media (width >= 768px) {
+    header {
+      height: 128px;
+      background-color: transparent;
+    }
+
+    .nav-menu {
+      position: static;
+      width: auto;
+    }
+
+    .nav-list {
+      column-gap: 16px;
+      flex-direction: row;
+      padding-block: 0px;
+    }
+
+    .nav-list li {
+      padding-block: 0px;
+      padding-inline: 4px;
+    }
+
+    button {
+      display: none;
+    }
   }
 </style>
+
+<script>
+  const $navMenu = document.getElementById("navMenu");
+  const $navBtnOpen = document.getElementById("navBtnOpen");
+  const $navBtnClose = document.getElementById("navBtnClose");
+  const $navSections = document.getElementsByClassName("nav-sections");
+
+  const openMenu = () => {
+    $navMenu?.classList.add("show");
+  };
+
+  const closeMenu = () => {
+    $navMenu?.classList.remove("show");
+  };
+
+  $navBtnOpen?.addEventListener("click", (event) => {
+    event.stopPropagation();
+    openMenu();
+  });
+
+  $navBtnClose?.addEventListener("click", (event) => {
+    event.stopPropagation();
+    closeMenu();
+  });
+
+  for (let i = 0; i < $navSections.length; i++) {
+    $navSections[i].addEventListener("click", (event) => {
+      event.stopPropagation();
+      closeMenu();
+    });
+  }
+</script>
