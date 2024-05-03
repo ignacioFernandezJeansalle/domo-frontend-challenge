@@ -1,0 +1,50 @@
+---
+import Container from "./Container.astro";
+---
+
+<header>
+  <nav class="navbar navbar-dark navbar-expand-md">
+    <Container>
+      <span class="navbar-brand">compleet labs</span>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" style="" href="#home">Home</a>
+          <a class="nav-link" href="#services">Services</a>
+          <a class="nav-link" href="#technology">Technology</a>
+          <a class="nav-link" href="#case-studies">Case Studies</a>
+          <a class="nav-link" href="#about">About</a>
+          <a class="nav-link" href="#hire-us">Hire us</a>
+        </div>
+      </div>
+    </Container>
+  </nav>
+</header>
+
+<style>
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .navbar {
+    --bs-navbar-padding-y: 48px;
+    --bs-navbar-nav-link-padding-x: 20px;
+  }
+
+  .navbar-collapse {
+    justify-content: end;
+  }
+</style>
