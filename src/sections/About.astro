@@ -1,0 +1,58 @@
+---
+import Container from "../components/Container.astro";
+
+const CARDS = [
+  {
+    title: "Get in touch with us",
+    description: "Maecenas sed diam eget risus varius blandit sit amet non magna.",
+    button: "Hire us",
+    href: "#hire-us",
+    bgImg: "",
+  },
+  {
+    title: "Our Projects",
+    description: "Maecenas sed diam eget risus varius blandit sit amet non magna.",
+    button: "See Projects",
+    href: "#see-projects",
+    bgImg: "/img/cards/iphone.webp",
+  },
+];
+---
+
+<section style="margin-bottom: -60px;">
+  <Container class="d-flex flex-column flex-lg-row justify-content-center gap-5">
+    {
+      CARDS.map((card) => {
+        const styleBg = card.bgImg
+          ? `background-image: url(${card.bgImg}); background-repeat: no-repeat; background-size: contain; background-position: top 1rem right 1.5rem;`
+          : "";
+        return (
+          <div
+            class="card bg-primary mx-auto"
+            style={`--bs-card-spacer-x: 1.5rem; --bs-card-spacer-y: 2rem; --bs-card-border-width: 0px; max-width: 650px; ${styleBg}`}
+          >
+            <div class="card-body">
+              <h3 class="card-title fs-3 fw-semibold text-light mb-3">{card.title}</h3>
+              <p class="card-text text-light w-50" style="--bs-text-opacity: 0.8;">
+                {card.description}
+              </p>
+              <a
+                href={card.href}
+                class="btn btn-primary fw-medium bg-primary"
+                style="--bs-btn-font-size: 12px; --bs-btn-line-height: none; --bs-btn-padding-x: 24px;--bs-btn-color: rgba(255, 255, 255, 0.8); --bs-btn-bg: transparent; --bs-btn-border-color: rgba(255, 255, 255, 0.7);"
+              >
+                {card.button}
+              </a>
+            </div>
+          </div>
+        );
+      })
+    }
+  </Container>
+</section>
+
+<style>
+  .card-text {
+    margin-bottom: 40px;
+  }
+</style>
